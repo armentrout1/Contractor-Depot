@@ -1,0 +1,42 @@
+.nav-bar {
+  display: flex;
+  overflow-x: auto; // Enable horizontal scroll
+  white-space: nowrap; // Prevent wrapping
+  align-items: center;
+  background-color: #34495e;
+  padding: 10px;
+  position: sticky;
+  top: 70px;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: #e74c3c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Custom scrollbar styling */
+.nav-bar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav-bar::-webkit-scrollbar-thumb {
+  background-color: #95a5a6;
+  border-radius: 3px;
+}
+
+.nav-bar::-webkit-scrollbar-thumb:hover {
+  background-color: #7f8c8d;
+}

@@ -1,0 +1,17 @@
+<section class="summary-box">
+  <h3>Estimate Summary</h3>
+  <div class="summary-item">
+    <span>Subtotal:</span>
+    <span>{{ subtotal | currency }}</span>
+  </div>
+  <div class="summary-item">
+    <label>
+      Tax (%):
+      <input type="number" [(ngModel)]="taxRate" (input)="calculateGrandTotal()" />
+    </label>
+  </div>
+  <div class="summary-item total">
+    <span>Grand Total:</span>
+    <span>{{ grandTotal | currency }}</span>
+  </div>
+</section>

@@ -1,4 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #2C3E50; /* Navy Blue */
+  --secondary-color: #95A5A6; /* Light Gray */
+  --accent-color: rgba(205, 45, 29, 0.81); /* Burnt Orange */
+  --button-accent-color: #1C3F91; /* Secondary accent color for buttons */
+  --text-color: #333333; /* General text color */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Global Button and Material Button Styles */
+button, .mat-button {
+  background-color: var(--button-accent-color) !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 15px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+button:hover, .mat-button:hover, button:focus, .mat-button:focus {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+button:active, .mat-button:active {
+  background-color: #D1392D !important;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 15px; /* Increased padding */
+  text-align: center;
+  font-size: 0.9rem; /* Smaller font */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th {
+  background-color: #2c3e50; /* Navy blue for header background */
+  color: #f5f5f5; /* Light off-white for text */
+  padding: 12px;
+  text-align: center; /* Center-align horizontally */
+  font-size: 16px;
+  font-weight: bold; /* Bold for emphasis */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for text pop */
+  vertical-align: middle; /* Center-align vertically */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+td {
+  padding: 10px;
+  text-align: left; /* Align table data left by default */
+  border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fdf6e3; /* Light tan for even rows */
+}
+
+thead th {
+  text-align: center; /* Center-align header row titles */
+}
+
+
+/* Center the button */
+button {
+  display: block;
+  margin: 20px auto; /* Centers the button horizontally */
+}
+
+
+
+/* App Container */
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.customer-list {
+    background-color: #D2B48C; /* Tan */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.customer-list table {
+    width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+}
+
+.customer-list th {
+    background-color: #2C3E50; /* Navy Blue */
+    color: #FFFFFF; /* White text for contrast */
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.customer-list td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.customer-list tr:nth-child(odd) {
+    background-color: #F0EAD6; /* Light Beige for offset rows */
+}
+
+.customer-list tr:nth-child(even) {
+    background-color: #FFFFFF; /* White for even rows */
+}
+
+button {
+    background-color: #2C3E50; /* Navy Blue */
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E74C3C; /* Burnt Orange on hover */
+}
+
+/* Global Content Wrapper */
+.container {
+  max-width: 100%; /* Ensure content doesn’t overflow */
+  padding: 0 15px; /* Add horizontal padding */
+  margin: 0 auto; /* Center content */
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 600px; /* Adjust max width for larger screens */
+  }
+}
+
+/* Global Resets to Fix Overflow and Margins */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
+
+* {
+  box-sizing: border-box;
+}

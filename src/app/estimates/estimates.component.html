@@ -1,0 +1,80 @@
+<h1>Estimates</h1>
+
+<!-- Page Toolbar -->
+<div class="page-toolbar">
+  <button mat-button (click)="createEstimate()">Create Estimate</button>
+  <button mat-button (click)="openProductServices()">Products & Services</button>
+  <button mat-button (click)="uploadCSV()">Upload CSV</button>
+  <button mat-button (click)="exportAsPDF()">Export as PDF</button>
+  <button mat-button (click)="exportEstimates()">Export Estimates</button>
+</div>
+
+<!-- Search Bar -->
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Search Estimates..."
+    [(ngModel)]="searchQuery"
+    (keyup)="filterEstimates()"
+  />
+</div>
+
+<!-- Status Filter -->
+<div class="status-filter">
+  <label for="status">Filter by Status:</label>
+  <select id="status" [(ngModel)]="selectedStatus" (change)="filterByStatus()">
+    <option value="">All</option>
+    <option value="Pending">Pending</option>
+    <option value="Approved">Approved</option>
+    <option value="Declined">Declined</option>
+  </select>
+</div>
+
+<!-- Estimates Table -->
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Customer</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estimate of paginatedEstimates">
+        <td>{{ estimate.id }}</td>
+        <td>{{ estimate.customerName }}</td>
+        <td>{{ estimate.description }}</td>
+        <td>{{ estimate.amount | number }}</td>
+        <td>{{ estimate.status }}</td>
+        <td>
+          <button mat-button (click)="editEstimate(estimate)">Edit</button>
+          <button mat-button (click)="duplicateEstimate(estimate)">Duplicate</button>
+          <button mat-button color="warn" (click)="deleteEstimate(estimate)">Delete</button>
+          <button mat-button (click)="viewDetails(estimate)">View Details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Pagination -->
+<div class="pagination">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>
+
+<!-- Estimate Details Modal -->
+<div *ngIf="selectedEstimate" class="modal">
+  <h2>Estimate Details</h2>
+  <p><strong>ID:</strong> {{ selectedEstimate.id }}</p>
+  <p><strong>Customer:</strong> {{ selectedEstimate.customerName }}</p>
+  <p><strong>Description:</strong> {{ selectedEstimate.description }}</p>
+  <p><strong>Amount:</strong> {{ selectedEstimate.amount | number }}</p>
+  <p><strong>Status:</strong> {{ selectedEstimate.status }}</p>
+  <button (click)="closeDetails()">Close</button>
+</div>

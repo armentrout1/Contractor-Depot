@@ -1,0 +1,196 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #2c3e50; /* Navy blue */
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  background-color: #d2b48c; /* Light tan */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  input {
+    width: 50%; /* Half the page width */
+    max-width: 600px; /* Maximum width for large screens */
+    min-width: 300px; /* Minimum width for smaller screens */
+    padding: 12px 20px; /* Add padding for better spacing */
+    font-size: 18px; /* Slightly larger font for a modern look */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add a soft shadow */
+    outline: none; /* Remove the blue outline on focus */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transitions for interactivity */
+
+    /* Placeholder styling */
+    &::placeholder {
+      color: #bbb; /* Light gray for placeholder text */
+      font-style: italic; /* Italic style for placeholder text */
+    }
+
+    /* On focus */
+    &:focus {
+      border-color: #e74c3c; /* Accent color for the border */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on focus */
+      background-color: #fefefe; /* Slightly lighter background */
+    }
+  }
+}
+
+.add-button {
+  text-align: right;
+  margin-bottom: 10px;
+
+  button {
+    padding: 10px 15px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #e74c3c; /* Burnt orange */
+  }
+}
+
+.customer-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-list th {
+  background-color: #2c3e50; /* Navy blue */
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.customer-list td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.customer-list tr:nth-child(odd) {
+  background-color: #f0ead6; /* Light beige */
+}
+
+.customer-list tr:nth-child(even) {
+  background-color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+  color: #2c3e50; /* Navy blue */
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button.confirm {
+    background-color: #e74c3c; /* Burnt orange */
+    color: white;
+  }
+
+  button.cancel {
+    background-color: #ccc;
+    color: #333;
+  }
+
+  button.confirm:hover {
+    background-color: #c0392b; /* Darker burnt orange */
+  }
+
+  button.cancel:hover {
+    background-color: #999;
+  }
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+:host {
+  display: block;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+table {
+  width: 100%; /* Ensure the table doesn't exceed the container */
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: center; /* Align content */
+  padding: 10px;
+}

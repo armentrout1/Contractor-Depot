@@ -1,0 +1,123 @@
+<div class="pro-profile-container">
+  <h2>Professional Profile</h2>
+
+  <form>
+    <!-- Contractor Details -->
+    <div class="form-group">
+      <label for="fullName">Full Name:</label>
+      <input
+        type="text"
+        id="fullName"
+        [(ngModel)]="contractor.fullName"
+        name="fullName"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="contractor.email"
+        name="email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input
+        type="tel"
+        id="phone"
+        [(ngModel)]="contractor.phone"
+        name="phone"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="businessName">Business Name:</label>
+      <input
+        type="text"
+        id="businessName"
+        [(ngModel)]="contractor.businessName"
+        name="businessName"
+        required
+      />
+    </div>
+
+    <!-- Logo Upload -->
+    <div class="form-group">
+      <label for="logo">Logo:</label>
+      <input type="file" id="logo" (change)="uploadLogo($event)" accept="image/*" />
+      <div *ngIf="contractor.logo">
+        <img [src]="contractor.logo" alt="Logo" class="preview-image" />
+      </div>
+    </div>
+
+    <!-- Photos Upload -->
+    <div class="form-group">
+      <label for="photos">Photos:</label>
+      <input
+        type="file"
+        id="photos"
+        (change)="uploadPhotos($event)"
+        accept="image/*"
+        multiple
+      />
+      <div class="photos-preview">
+        <div *ngFor="let photo of contractor.photos" class="photo-item">
+          <img [src]="photo" alt="Photo" class="preview-image" />
+          <button type="button" (click)="deletePhoto(photo)">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Documents Upload -->
+    <div class="form-group">
+      <label>Documents:</label>
+      <div class="document-upload">
+        <label for="license">License:</label>
+        <input
+          type="file"
+          id="license"
+          (change)="uploadDocument($event, 'license')"
+          accept=".pdf,.jpg,.png"
+        />
+        <div *ngIf="contractor.documents.license">
+          <a [href]="contractor.documents.license" target="_blank">View License</a>
+        </div>
+      </div>
+
+      <div class="document-upload">
+        <label for="w9">W-9:</label>
+        <input
+          type="file"
+          id="w9"
+          (change)="uploadDocument($event, 'w9')"
+          accept=".pdf,.jpg,.png"
+        />
+        <div *ngIf="contractor.documents.w9">
+          <a [href]="contractor.documents.w9" target="_blank">View W-9</a>
+        </div>
+      </div>
+
+      <div class="document-upload">
+        <label for="insurance">Insurance:</label>
+        <input
+          type="file"
+          id="insurance"
+          (change)="uploadDocument($event, 'insurance')"
+          accept=".pdf,.jpg,.png"
+        />
+        <div *ngIf="contractor.documents.insurance">
+          <a [href]="contractor.documents.insurance" target="_blank">View Insurance</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview Button -->
+    <button type="button" (click)="previewProfile()">Preview Profile</button>
+  </form>
+</div>

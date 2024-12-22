@@ -1,0 +1,95 @@
+.pro-profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type='text'],
+      input[type='email'],
+      input[type='tel'],
+      input[type='file'] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      .photos-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+
+        .photo-item {
+          position: relative;
+
+          .preview-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+
+          button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(255, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .document-upload {
+        margin-bottom: 10px;
+
+        a {
+          display: inline-block;
+          margin-top: 5px;
+          color: #007bff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    button[type='button'] {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: center;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+}

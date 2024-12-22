@@ -1,0 +1,136 @@
+/* General Styles */
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Toolbar Buttons */
+.page-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.page-toolbar button {
+  flex: 1 1 100%;
+  max-width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Search Bar and Filter */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-container input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.status-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.status-filter label {
+  margin-right: 10px;
+}
+
+.status-filter select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 600px) {
+  th,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    border: none;
+    padding: 10px 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 50%;
+  }
+
+  table {
+    border: none;
+  }
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 90%;
+}
+
+.modal button {
+  display: block;
+  margin: 10px auto 0;
+}

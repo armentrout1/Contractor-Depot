@@ -1,0 +1,23 @@
+<div class="home-bar" [class.home-bar-hidden]="isHidden">
+  <!-- Home Button -->
+  <div class="home-button grow-on-hover" (click)="navigateHome()">
+    <img src="assets/icons/home-icon.svg" alt="Home" />
+  </div>
+
+  <!-- App Title -->
+  <div class="app-title">My App</div>
+
+  <!-- Profile Icon and Dropdown -->
+  <div class="profile-menu">
+    <div class="icon grow-on-hover" (click)="toggleDropdown()">
+      <img src="assets/icons/profile-icon.svg" alt="Profile" />
+    </div>
+    <div class="dropdown" *ngIf="isDropdownOpen">
+      <ul>
+        <li (click)="onClickOption('View Profile')">View Profile</li>
+        <li (click)="onClickOption('Settings')">Settings</li>
+        <li (click)="onClickOption('Log Out')">Log Out</li>
+      </ul>
+    </div>
+  </div>
+</div>

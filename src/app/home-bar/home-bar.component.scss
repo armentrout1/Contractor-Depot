@@ -1,0 +1,95 @@
+.home-bar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  &.home-bar-hidden {
+    transform: translateY(-100%);
+  }
+}
+
+.home-button,
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2); // Grow effect on hover
+  }
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.profile-menu {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  width: 200px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 10px 15px;
+      color: #333;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home-bar {
+    height: 60px;
+    padding: 5px 15px;
+  }
+
+  .app-title {
+    font-size: 16px;
+  }
+
+  .home-button,
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dropdown {
+    width: 150px;
+  }
+}
