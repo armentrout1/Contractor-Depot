@@ -2,12 +2,20 @@
 
 <!-- Page Toolbar -->
 <div class="page-toolbar">
-  <button mat-button (click)="createEstimate()">Create Estimate</button>
-  <button mat-button (click)="openProductServices()">Products & Services</button>
-  <button mat-button (click)="uploadCSV()">Upload CSV</button>
-  <button mat-button (click)="exportAsPDF()">Export as PDF</button>
-  <button mat-button (click)="exportEstimates()">Export Estimates</button>
+  <button mat-icon-button matTooltip="Create Estimate" (click)="createEstimate()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Products & Services" (click)="openProductServices()">
+    <mat-icon>inventory_2</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Upload CSV" (click)="uploadCSV()">
+    <mat-icon>upload_file</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Export Estimates" (click)="exportEstimates()">
+    <mat-icon>assignment</mat-icon>
+  </button>
 </div>
+
 
 <!-- Search Bar -->
 <div class="search-container">

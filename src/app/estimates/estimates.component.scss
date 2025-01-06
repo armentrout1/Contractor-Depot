@@ -6,35 +6,113 @@ h1 {
 }
 
 /* Toolbar Buttons */
+.page-toolbar button {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  width: 48px; /* Button size */
+  height: 48px;
+  border-radius: 50%; /* Circular shape */
+  background-color: #2c3e50; /* Button color */
+  color: white; /* Icon color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: #e74c3c; /* Hover effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Icon Styling */
+.page-toolbar mat-icon {
+  font-size: 24px; /* Icon size */
+  width: 24px; /* Ensure square area */
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Toolbar Styles */
 .page-toolbar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem;
+  justify-content: center; /* Centers buttons horizontally */
+  gap: 1rem; /* Adds space between buttons */
+  margin-bottom: 1rem;
 }
 
+/* Toolbar Styles */
+.page-toolbar {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of buttons */
+  gap: 0.5rem; /* Reduce spacing between buttons */
+  align-items: center; /* Align vertically */
+  overflow-x: auto; /* Allow horizontal scroll on mobile */
+  padding: 0.5rem; /* Add padding for spacing */
+}
+
+/* For Desktop */
+@media screen and (min-width: 601px) {
+  .page-toolbar {
+    justify-content: flex-start; /* Align to the left on desktop */
+  }
+}
+
+/* For Mobile */
+@media screen and (max-width: 600px) {
+  .page-toolbar {
+    justify-content: flex-end; /* Align to the right on mobile */
+  }
+}
+
+/* Individual Button Styles */
 .page-toolbar button {
-  flex: 1 1 100%;
-  max-width: 100%;
-  padding: 10px;
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* Smaller buttons */
+  height: 48px;
+  border-radius: 50%; /* Circular shape */
+  background-color: #2c3e50;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: #e74c3c;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 }
 
-/* Search Bar and Filter */
+/* Tooltip Styles */
+.mat-tooltip {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Search Bar */
 .search-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0;
+  justify-content: center; /* Center horizontally */
+  margin: 20px 0; /* Maintain spacing */
 }
 
 .search-container input {
   width: 90%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
+/* Status Filter */
 .status-filter {
   display: flex;
   justify-content: center;
@@ -75,35 +153,6 @@ th {
   color: white;
 }
 
-/* Responsive Table */
-@media screen and (max-width: 600px) {
-  th,
-  td {
-    display: block;
-    width: 100%;
-  }
-
-  th {
-    text-align: left;
-  }
-
-  td {
-    border: none;
-    padding: 10px 0;
-  }
-
-  td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    display: inline-block;
-    width: 50%;
-  }
-
-  table {
-    border: none;
-  }
-}
-
 /* Pagination */
 .pagination {
   display: flex;
@@ -133,4 +182,15 @@ th {
 .modal button {
   display: block;
   margin: 10px auto 0;
+}
+
+/* Tooltip Styles */
+.mat-tooltip {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
