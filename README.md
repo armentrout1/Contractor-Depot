@@ -1,5 +1,8 @@
 # Contractor Depot 🛠️
 
+![Contributors](https://img.shields.io/github/contributors/armentrout1/Contractor-Depot)
+
+
 **A Community-Driven Tool for Contractors and Project Management**
 
 ---
